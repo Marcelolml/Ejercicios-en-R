@@ -1,0 +1,126 @@
+#ejercicio 1
+numero<-0
+for(i in sample(1:10)){
+  if(i < 0){
+    print(paste("es negativo",i))
+  }else if(i == 0){
+    print(paste("el numero 0 ",i))
+  }else if(i > 0){
+    print(paste("es positivo",i))
+  }
+  numero
+}
+
+#ejercicio 2
+numero<-0
+for(i in sample(1:100)){
+  if(i%%2 == 0){
+    print(paste("es par",i))
+  }else{
+    print(paste("es impar",i))
+  }
+  numero
+}
+
+#ejercicio 3
+N <- as.numeric(readline(prompt = "Ingresa un número N: "))
+suma <- sum(1:N)
+print(paste("La suma de los primeros", N, "números es:", suma))
+
+#ejercicio 4
+nterms = as.integer(readline(prompt="digite el numero que quiere: "))
+n1 = 0
+n2 = 1
+count = 2
+if(nterms == 1) {
+  print("Secuencia Fibonaci:")
+  print(n1)
+} else {
+  print("Secuencia Fibonacci:")
+  print(n1)
+  print(n2)
+  while(count < nterms) {
+    nth = n1 + n2
+    print(nth)
+    n1 = n2
+    n2 = nth
+    count = count + 1
+  }
+}
+
+#ejercicio 5
+n <- readline(prompt="Ingresa el numero: ")
+factorial = 1
+
+for(i in 1:n)
+{
+  factorial = factorial * i 
+}
+print(paste("el factorial de", n ,"es",factorial))
+
+#ejercicio 6
+set.seed(123)
+numero_secreto <- sample(1:100, 1)
+intento <- 0
+while (TRUE) {
+  intento <- as.numeric(readline(prompt = "Adivina el número (1-100): "))
+  if (intento == numero_secreto) {
+    print("¡Correcto!")
+    break
+  } else if (intento < numero_secreto) {
+    print("El número secreto es mayor.")
+  } else {
+    print("El número secreto es menor.")
+  }
+}
+
+#ejercicio 7
+contrasena_correcta <- "marcelo123"
+intentos <- 0
+while (intentos < 3) {
+  contrasena <- readline(prompt = "Ingresa tu contraseña: ")
+  if (contrasena == contrasena_correcta) {
+    print("Contraseña correcta.")
+    break
+  } else {
+    intentos <- intentos + 1
+    print(paste("Intento incorrecto. Intentos restantes:", 3 - intentos))
+  }
+  if (intentos == 3) {
+    print("Demasiados intentos fallidos. Acceso bloqueado.")
+  }
+}
+
+#ejercicio 8
+numero <- as.numeric(readline(prompt = "Ingresa un número: "))
+suma_digitos <- 0
+
+while (numero > 0) {
+  digito <- numero %% 10
+  suma_digitos <- suma_digitos + digito
+  numero <- floor(numero / 10)
+}
+
+print(paste("La suma de los dígitos es:", suma_digitos))
+
+#ejercicio 9
+for (i in 1:5) {
+  cat(rep("*", i), "\n")
+}
+
+#ejercicio 10
+es_primo <- function(num) {
+  if (num < 2) return(FALSE)
+  for (i in 2:sqrt(num)) {
+    if (num %% i == 0) return(FALSE)
+  }
+  return(TRUE)
+}
+
+for (i in 1:100) {
+  if (es_primo(i)) {
+    print(i)
+  }
+}
+
+
